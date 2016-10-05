@@ -20,5 +20,9 @@ namespace AjaxDemo.Controllers
             return Content("Hello from the controller!",
                 "text/plain");
         }
+        public IActionResult Sum(int firstNumber, int secondNumber)
+        {
+            return Content((firstNumber + secondNumber).ToString(), "text/plain");
+        }
     }
 }

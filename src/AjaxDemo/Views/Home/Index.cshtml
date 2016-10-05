@@ -16,10 +16,28 @@
         });
     });
     </script>
+    <script type="text/javascript">
+    $(document).ready(function () {
+            $('.sum').click(function () {
+                $.ajax({
+                    type: 'GET',
+                    data: { firstNumber: 1, secondNumber: 2 },
+                    url: '@Url.Action("Sum")',
+                    success: function (result) {
+                        $('#result2').html(result);
+                    }
+                });
+            });
+    });
+    </script>
 </head>
 <body>
     <h2>Basic AJAX</h2>
     <h4 class="hello-ajax">Hello Ajax</h4>
     <div id="result1"></div>
+
+    <h2>Using Parameters</h2>
+    <h4 class="sum">Sum</h4>
+    <div id="result2"></div>
 </body>
 </html>
